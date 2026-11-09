@@ -11,7 +11,8 @@ using System.Text;
 string[] urls =
 {
     "https://setup.rbxcdn.com/",
-    "https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/"
+    "https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/",
+    "https://androdome.com/DeployHistory/version/"
 };
 
  Dictionary<string, string> Player = new Dictionary<string, string>
@@ -31,6 +32,7 @@ string[] urls =
         { "content-sky.zip", "content/sky/" },
         { "content-translations.zip", "content/translations/" },
         { "content-sounds.zip", "content/sounds/" },
+        { "content-textures.zip", "content/textures/" },
         { "content-textures2.zip", "content/textures/" },
         { "content-models.zip", "content/models/" },
 
@@ -66,15 +68,18 @@ string[] urls =
         { "BuiltInPlugins.zip", "BuiltInPlugins/" },
         { "ApplicationConfig.zip", "ApplicationConfig/" },
         { "BuiltInStandalonePlugins.zip", "BuiltInStandalonePlugins/" },
-
+        { "imageformats.zip", "imageformats/" },
+        
         { "content-qt_translations.zip", "content/qt_translations/" },
         { "content-sky.zip", "content/sky/" },
+        { "content-scripts.zip", "content/scripts/" },
         { "content-fonts.zip", "content/fonts/" },
         { "content-avatar.zip", "content/avatar/" },
         { "content-models.zip", "content/models/" },
         { "content-sounds.zip", "content/sounds/" },
         { "content-configs.zip", "content/configs/" },
         { "content-api-docs.zip", "content/api_docs/" },
+        { "content-textures.zip", "content/textures/" },
         { "content-textures2.zip", "content/textures/" },
         { "content-studio_svg_textures.zip", "content/studio_svg_textures/" },
 
@@ -100,8 +105,8 @@ string[] RCC = {
         "RCC-RobloxAB1FEC8F0BB9C736E1454364EA6D7D38.exe",
 };
 
-Console.WriteLine("Roblox version downloader, made by icscata");
-Console.WriteLine("Please enter source (prod, gt2): ");
+Console.WriteLine("Roblox version downloader, made by icscata & forked by muser");
+Console.WriteLine("Please enter source (prod, gt2, androdome): ");
 string urlChoice = Console.ReadLine()!;
 
 string url;
@@ -112,6 +117,9 @@ switch (urlChoice.ToLower())
         url = urls[0];
         break;
     case "gt2":
+        url = urls[1];
+        break;
+    case "androdome":
         url = urls[1];
         break;
     default:
